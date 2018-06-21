@@ -9,11 +9,12 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-public class Main {
+public class Find_Data {
 
     public static void main(String[] args) throws Exception {
 	// write your code here
-        Main obj = new Main();
+        Find_Data obj;
+        obj = new Find_Data();
         System.out.println(obj.getFile("fizztheturtle/API_Key.txt"));
     }
 
@@ -31,9 +32,7 @@ public class Main {
                 String line = scanner.nextLine();
                 result.append(line).append("\n");
             }
-
-            scanner.close();
-
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
