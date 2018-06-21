@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args)  {
 	// write your code here
         Main obj = new Main();
         System.out.println(obj.getFile("fizztheturtle/API_Key.txt"));
