@@ -5,6 +5,7 @@ package fizztheturtle;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -21,7 +22,7 @@ public class Main {
 
         //Get file from resources folder
         ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource(fileName).getFile());
+        File file = new File(Objects.requireNonNull(classLoader.getResource(fileName)).getFile());
 
         try (Scanner scanner = new Scanner(file)) {
 
