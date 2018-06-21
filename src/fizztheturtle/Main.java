@@ -5,12 +5,13 @@ package fizztheturtle;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Objects;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws Exception {
 	// write your code here
         Main obj = new Main();
         System.out.println(obj.getFile("fizztheturtle/API_Key.txt"));
@@ -18,11 +19,11 @@ public class Main {
 
     private String getFile(String fileName) {
 
-        StringBuilder result = new StringBuilder();
+        StringBuilder result = new StringBuilder("");
 
         //Get file from resources folder
         ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(Objects.requireNonNull(classLoader.getResource(fileName)).getFile());
+        File file = new File(classLoader.getResource(fileName).getFile());
 
         try (Scanner scanner = new Scanner(file)) {
 
@@ -30,6 +31,8 @@ public class Main {
                 String line = scanner.nextLine();
                 result.append(line).append("\n");
             }
+
+            scanner.close();
 
         } catch (IOException e) {
             e.printStackTrace();
