@@ -4,8 +4,10 @@ package fizztheturtle;
 //"Contains public sector information licensed under the Open Government Licence"
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+
 
 public class Find_Data {
 
@@ -14,6 +16,7 @@ public class Find_Data {
         Find_Data obj;
         obj = new Find_Data();
         System.out.println(obj.getFile("fizztheturtle/API_Key.txt"));
+        JsonReader reader = new JsonReader(new FileReader("c:\\user.json"));
     }
 
     private String getFile(String fileName) {
