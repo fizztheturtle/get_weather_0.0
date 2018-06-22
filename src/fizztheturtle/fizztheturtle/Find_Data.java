@@ -2,7 +2,7 @@ package fizztheturtle;
 
 
 //"Contains public sector information licensed under the Open Government Licence"
-
+// add a 250 counter per minute for requests
 import com.google.gson.Gson;
 
 import java.io.File;
@@ -23,12 +23,9 @@ public class Find_Data {
         URL url = new URL("https://httpbin.org/get?color=red&shape=oval");
         InputStreamReader reader = new InputStreamReader(url.openStream());
 
-
-
-
         MyDto dto = new Gson().fromJson(reader, MyDto.class);
 
-        // using the deserialized object
+        // using the de-serialised object
         System.out.println(dto.headers);
         System.out.println(dto.args);
         System.out.println(dto.origin);
@@ -42,6 +39,7 @@ public class Find_Data {
         String origin;
         String url;
     }
+
     private String getFile(String fileName) {
 
         StringBuilder result = new StringBuilder("");
