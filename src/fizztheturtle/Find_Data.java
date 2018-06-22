@@ -3,22 +3,45 @@ package fizztheturtle;
 
 //"Contains public sector information licensed under the Open Government Licence"
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Scanner;
+import com.google.gson.Gson;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.util.Map;
+import java.util.Scanner;
 
 public class Find_Data {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 	// write your code here
         Find_Data obj;
         obj = new Find_Data();
         System.out.println(obj.getFile("fizztheturtle/API_Key.txt"));
 
+        URL url = new URL("https://httpbin.org/get?color=red&shape=oval");
+        InputStreamReader reader = new InputStreamReader(url.openStream());
+
+
+
+
+        MyDto dto = new Gson().fromJson(reader, MyDto.class);
+
+        // using the deserialized object
+        System.out.println(dto.headers);
+        System.out.println(dto.args);
+        System.out.println(dto.origin);
+        System.out.println(dto.url);
     }
 
+    private class MyDto {
+
+        Map<String, String> headers;
+        Map<String, String> args;
+        String origin;
+        String url;
+    }
     private String getFile(String fileName) {
 
         StringBuilder result = new StringBuilder("");
