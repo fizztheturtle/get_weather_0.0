@@ -16,7 +16,7 @@ public class Find_Data {
         Find_Data obj;
         obj = new Find_Data();
         System.out.println(obj.getFile("fizztheturtle/API_Key.txt"));
-        JsonReader reader = new JsonReader(new FileReader("c:\\user.json"));
+
     }
 
     private String getFile(String fileName) {
