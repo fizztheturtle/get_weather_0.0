@@ -1,14 +1,12 @@
 package fizztheturtle;
-
-
 //"Contains public sector information licensed under the Open Government Licence"
 // add a 10 counter per minute for requests
 // add a 100000 per day counter
-import com.google.gson.Gson;
 import org.json.simple.parser.*;
 import org.json.simple.*;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -17,69 +15,58 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Scanner;
 
+
 public class Find_Data {
 
     public static void main(String[] args) throws Exception {
-	// write your code here
+        // write your code here
         Find_Data obj;
         obj = new Find_Data();
 //        System.out.println(obj.getFile("fizztheturtle/API_Key.txt"));
 
+        String link ="C:/AndroidApplications/Weather_0.1/MetOfficeList/weather_3hours.json";
 //        Windows link
-//        URL url = new URL("file:///C:/AndroidApplications/Weather_0.1/MetOfficeList/weather_3hours.json");
+//        URL url = new URL(link);
 
 //        Mac link
-        URL url = new URL("file:///Users/Fizztheturtle/Desktop/PersonalProjects/get_weather_0.0/MetOfficeList/weather_3hours.json");
-        InputStreamReader reader = new InputStreamReader(url.openStream());
+//        URL url =
+// new URL("file:///Users/Fizztheturtle/Desktop/PersonalProjects/get_weather_0.0/MetOfficeList/weather_3hours.json");
+//        InputStreamReader reader = new InputStreamReader(url.openStream());
 
-        MyDto dto = new Gson().fromJson(reader, MyDto.class);
 
-        // using the de-serialised object
-        //System.out.println(dto.headers);
-        Map<String, String> headers = dto.D;
-        for (Map.Entry<String, String> entry : headers.entrySet())
-        {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
-        }
-        System.out.println(dto.args);
-        System.out.println(dto.origin);
-        System.out.println(dto.url);
 
         JSONParser jsonParser = new JSONParser();
-        Object object;
-        object = jsonParser.parse("file:///Users/Fizztheturtle/Desktop/PersonalProjects/get_weather_0.0/MetOfficeList/weather_3hours.json");
+        Object object ;
+        object = jsonParser.parse(new FileReader("MetOfficeList/weather_3days.json"));
+
         JSONObject jsonObject = (JSONObject) object;
-        JSONObject compose = (JSONObject) jsonObject.get("compose");
-        System.out.println("compose: " + compose);
+        JSONObject dv = (JSONObject) jsonObject.get("DV");
+        System.out.println("DV: " + dv);
 
-        JSONArray soundex = (JSONArray) compose.get("soundex");
-        System.out.println("\tsoundex: " + soundex);
+        JSONObject location = (JSONObject) dv.get("Location");
+        System.out.println("location: " + location);
 
-        Object composeObj = jsonObject.get("compose");
-        JSONObject jsonObject1 = (JSONObject) composeObj;
-        Iterator itr = soundex.iterator();
+
+        JSONArray Period = (JSONArray) location.get("Period");
+        System.out.println("\tPeriod: " + Period);
+
+        Iterator itr = Period.iterator();
 
         while (itr.hasNext()) {
 
             Object slide = itr.next();
             JSONObject jsonObject2 = (JSONObject) slide;
-            JSONObject info = (JSONObject) jsonObject2.get("info");
+            JSONObject Rep = (JSONObject) jsonObject2.get("Rep");
 
-            String date_of_birth = (String) info.get("date_of_birth");
-            String name_id = (String) info.get("name_id");
+            String date_of_birth = (String) Rep.get("date_of_birth");
+            String name_id = (String) Rep.get("name_id");
 
             System.out.println("\t\tDate of Birth: " + date_of_birth);
             System.out.println("\t\tName Id: " + name_id);
         }
     }
 
-    private class MyDto {
 
-        Map<String, String> D;
-        Map<String, String> args;
-        String origin;
-        String url;
-    }
 
     private String getFile(String fileName) {
 
