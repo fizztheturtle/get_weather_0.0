@@ -54,12 +54,16 @@ public class Find_Data {
         for(Object periodObj: Period.toArray()){
             JSONObject period_2 = (JSONObject)periodObj;
             JSONArray Rep = (JSONArray) period_2.get("Rep");
+            System.out.println("\tPeriod: " + periodObj);
             for(Object repObj: Rep.toArray()){
                 JSONObject rep_2 = (JSONObject) repObj;
-                System.out.println("\trep: " + rep_2);
+                System.out.println("\t\t rep: " + rep_2);
+                String weather_type = (String) rep_2.get("W");
+                System.out.println("\t\t\t weather_type: " + weather_type);
+//                String name_id = (String) rep_2.get("$");
                 //do something with the issue
             }
-            System.out.println("\tPeriod: " + periodObj);
+
         }
     }
 
