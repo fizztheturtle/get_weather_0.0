@@ -9,6 +9,9 @@ import org.json.simple.parser.JSONParser;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -60,7 +63,16 @@ public class Find_Data {
                 System.out.println("\t\t rep: " + rep_2);
                 String weather_type = (String) rep_2.get("W");
                 System.out.println("\t\t\t weather_type: " + weather_type);
-//                String name_id = (String) rep_2.get("$");
+                String $_temp = (String) rep_2.get("$");
+                int $= Integer.parseInt($_temp);
+                String myTime = "00:00";
+                SimpleDateFormat df = new SimpleDateFormat("HH:mm");
+                Date d = df.parse(myTime);
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(d);
+                cal.add(Calendar.MINUTE, $);
+                String newTime = df.format(cal.getTime());
+                System.out.println("\t\t\t $_temp: " + newTime);
                 //do something with the issue
             }
 
