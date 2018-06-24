@@ -9,21 +9,31 @@ import org.json.simple.parser.JSONParser;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 import java.util.Scanner;
 
+import static java.nio.file.Paths.*;
+
 
 public class Find_Data {
 
     public static void main(String[] args) throws Exception {
         // write your code here
-        Find_Data obj;
-        obj = new Find_Data();
-        System.out.println(obj.getFile("API_Key.txt"));
-
+//        Find_Data obj;
+//        obj = new Find_Data();
+        String contents =new String(Files.readAllBytes(Paths.get("C:\\AndroidApplications\\get_weather_0.1\\src\\fizztheturtle\\fizztheturtle\\API_Key.txt")));
+//        String API_Key= "C:/AndroidApplications/get_weather_0.1/src/fizztheturtle/fizztheturtle/";
+////        File API_Key = new File("API_key.txt");
+//        String path = API_Key.getAbsolutePath();
+//        System.out.println("File path: " +path);
+        System.out.println(contents);
+//        System.out.println(p);
         String link ="C:/AndroidApplications/Weather_0.1/MetOfficeList/weather_3hours.json";
 //        Windows link
 //        URL url = new URL(link);
