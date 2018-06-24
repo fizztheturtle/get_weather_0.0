@@ -9,6 +9,7 @@ import org.json.simple.parser.JSONParser;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -25,25 +26,17 @@ public class Find_Data {
 
     public static void main(String[] args) throws Exception {
         // write your code here
-//        Find_Data obj;
-//        obj = new Find_Data();
-        String contents =new String(Files.readAllBytes(Paths.get("C:\\AndroidApplications\\get_weather_0.1\\src\\fizztheturtle\\fizztheturtle\\API_Key.txt")));
-//        String API_Key= "C:/AndroidApplications/get_weather_0.1/src/fizztheturtle/fizztheturtle/";
-////        File API_Key = new File("API_key.txt");
-//        String path = API_Key.getAbsolutePath();
-//        System.out.println("File path: " +path);
+        URL url =  Find_Data.class.getResource("API_Key.txt");
+        String API_Key=Paths.get(url.toURI()).toFile().toString();
+
+        String contents =new String(Files.readAllBytes(Paths.get(API_Key)));
+
         System.out.println(contents);
-//        System.out.println(p);
-        String link ="C:/AndroidApplications/Weather_0.1/MetOfficeList/weather_3hours.json";
-//        Windows link
-//        URL url = new URL(link);
 
-//        Mac link
-//        URL url =
-// new URL("file:///Users/Fizztheturtle/Desktop/PersonalProjects/get_weather_0.0/MetOfficeList/weather_3hours.json");
-//        InputStreamReader reader = new InputStreamReader(url.openStream());
-
-
+//        String link ="C:/AndroidApplications/Weather_0.1/MetOfficeList/weather_3hours.json";
+//
+//        URL url_temp =  Find_Data.class.getResource("weather_3hours.json");
+//        String link =Paths.get(url.toURI()).toFile().toString();
 
         JSONParser jsonParser = new JSONParser();
         Object object ;
@@ -91,27 +84,5 @@ public class Find_Data {
 
 
 
-    private String getFile(String fileName) {
-
-        StringBuilder result = new StringBuilder();
-
-        //Get file from resources folder
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(Objects.requireNonNull(classLoader.getResource(fileName)).getFile());
-
-        try (Scanner scanner = new Scanner(file)) {
-
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                result.append(line).append("\n");
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return result.toString();
-
-    }
 
 }
