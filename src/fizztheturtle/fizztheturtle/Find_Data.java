@@ -2,16 +2,13 @@ package fizztheturtle;
 //"Contains public sector information licensed under the Open Government Licence"
 // add a 10 counter per minute for requests
 // add a 100000 per day counter
-import org.json.simple.parser.*;
-import org.json.simple.*;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.util.Iterator;
-import java.util.Map;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -40,7 +37,10 @@ public class Find_Data {
         object = jsonParser.parse(new FileReader("MetOfficeList/weather_3days.json"));
 
         JSONObject jsonObject = (JSONObject) object;
-        JSONObject dv = (JSONObject) jsonObject.get("DV");
+
+        JSONObject SiteRep = (JSONObject) jsonObject.get("SiteRep");
+        System.out.println("SiteRep: " + SiteRep);
+        JSONObject dv = (JSONObject) SiteRep.get("DV");
         System.out.println("DV: " + dv);
 
         JSONObject location = (JSONObject) dv.get("Location");
@@ -48,21 +48,18 @@ public class Find_Data {
 
 
         JSONArray Period = (JSONArray) location.get("Period");
-        System.out.println("\tPeriod: " + Period);
 
-        Iterator itr = Period.iterator();
 
-        while (itr.hasNext()) {
 
-            Object slide = itr.next();
-            JSONObject jsonObject2 = (JSONObject) slide;
-            JSONObject Rep = (JSONObject) jsonObject2.get("Rep");
-
-            String date_of_birth = (String) Rep.get("date_of_birth");
-            String name_id = (String) Rep.get("name_id");
-
-            System.out.println("\t\tDate of Birth: " + date_of_birth);
-            System.out.println("\t\tName Id: " + name_id);
+        for(Object periodObj: Period.toArray()){
+            JSONObject period_2 = (JSONObject)periodObj;
+            JSONArray Rep = (JSONArray) period_2.get("Rep");
+            for(Object repObj: Rep.toArray()){
+                JSONObject rep_2 = (JSONObject) repObj;
+                System.out.println("\trep: " + rep_2);
+                //do something with the issue
+            }
+            System.out.println("\tPeriod: " + periodObj);
         }
     }
 
