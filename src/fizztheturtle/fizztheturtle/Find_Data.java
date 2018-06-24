@@ -22,7 +22,7 @@ public class Find_Data {
         // write your code here
         Find_Data obj;
         obj = new Find_Data();
-//        System.out.println(obj.getFile("fizztheturtle/API_Key.txt"));
+        System.out.println(obj.getFile("API_Key.txt"));
 
         String link ="C:/AndroidApplications/Weather_0.1/MetOfficeList/weather_3hours.json";
 //        Windows link

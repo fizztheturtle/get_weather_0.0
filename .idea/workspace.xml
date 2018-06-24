@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c49a649-3efc-4cde-bcac-69362636a0f2" name="Default" comment="">
+    <list default="true" id="7c49a649-3efc-4cde-bcac-69362636a0f2" name="Default" comment="moving files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fizztheturtle/fizztheturtle/Find_Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fizztheturtle/fizztheturtle/Find_Data.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="src/fizztheturtle/API_Key.txt" />
@@ -28,8 +27,8 @@
       <file leaf-file-name="Find_Data.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/fizztheturtle/fizztheturtle/Find_Data.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="63" column="27" lean-forward="true" selection-start-line="63" selection-start-column="27" selection-end-line="63" selection-end-column="27" />
+            <state relative-caret-position="468">
+              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -337,7 +336,7 @@
       <workItem from="1529628825431" duration="344000" />
       <workItem from="1529777018421" duration="3372000" />
       <workItem from="1529790785690" duration="1323000" />
-      <workItem from="1529833362580" duration="8125000" />
+      <workItem from="1529833362580" duration="8903000" />
     </task>
     <task id="LOCAL-00001" summary="remove exceptions">
       <created>1529547585584</created>
@@ -388,11 +387,32 @@
       <option name="project" value="LOCAL" />
       <updated>1529841155886</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Json implemented, requires if statements to define each weather type">
+      <created>1529862548257</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1529862548257</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Json implemented, requires if statements to define each weather type">
+      <created>1529862602063</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1529862602063</updated>
+    </task>
+    <task id="LOCAL-00010" summary="moving files">
+      <created>1529862643862</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1529862643862</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15624000" />
+    <option name="totallyTimeSpent" value="16402000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1065" y="0" width="2013" height="1704" extended-state="0" />
@@ -408,12 +428,12 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.08108108" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41624364" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.41624364" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="right" id="JSON Viewer" order="4" weight="0.32967034" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10155077" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10155077" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -441,7 +461,9 @@
     <MESSAGE value="remove exceptions" />
     <MESSAGE value="unnecessary imports" />
     <MESSAGE value="required stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="required stuff" />
+    <MESSAGE value="Json implemented, requires if statements to define each weather type" />
+    <MESSAGE value="moving files" />
+    <option name="LAST_COMMIT_MESSAGE" value="moving files" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/MetOfficeList/sitelist.json">
@@ -501,8 +523,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fizztheturtle/fizztheturtle/Find_Data.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="63" column="27" lean-forward="true" selection-start-line="63" selection-start-column="27" selection-end-line="63" selection-end-column="27" />
+        <state relative-caret-position="468">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
